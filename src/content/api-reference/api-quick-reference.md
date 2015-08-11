@@ -98,7 +98,7 @@ The Core Device encapsulates actions that are fundamental to all Orbotix devices
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|------
-00h | 01h | <any> | 01h
+00h | 01h | &#60;any&#62; | 01h
 
 
 #### Response
@@ -122,7 +122,7 @@ DID | CID
 
 #### Response
 
-DLEN | <data>
+DLEN | &#60;data&#62;
 -----|-------
 0Bh  | see below
 
@@ -150,9 +150,9 @@ API-min | 9            | API minor revision code this firmware implements
 
 >
 
-DID | CID | SEQ   | DLEN         | <data>
+DID | CID | SEQ   | DLEN         | &#60;data&#62;
 ----|-----|-------|--------------|---------
-00h | 10h | <any> | <data> + 01h | text name
+00h | 10h | &#60;any&#62; | &#60;data&#62; + 01h | text name
 
 #### Response
 
@@ -182,7 +182,7 @@ DID | CID
 
 >
 
-DLEN  | 16 bytes     | 12 bytes     | <byte>    | 3 bytes
+DLEN  | 16 bytes     | 12 bytes     | &#60;byte&#62;    | 3 bytes
 ----- | ------------ | ------------ | --------- | -----------
 21h   | ASCII name   | ASCII BTA    | 00h       | ID colors
 
@@ -204,7 +204,7 @@ This is provided as a courtesy for Clients that have don’t have a method to in
 
 DID | CID | SEQ   | DLEN | data 0 | data 1
 ----|-----|-------|------|--------|-------
-00h | 12h | <any> | 03h  | flag   | time
+00h | 12h | &#60;any&#62; | 03h  | flag   | time
 
 #### Response
 
@@ -226,7 +226,7 @@ For example, if `time` = `30` then the module will be attempt reconnecting 30 se
 
 DID |￼CID | SEQ   |￼DLEN
 ----|-----|-------|-----
-00h |￼13h | <any> |￼01h
+00h |￼13h | &#60;any&#62; |￼01h
 
 
 #### Response
@@ -253,7 +253,7 @@ DID | CID
 
 >
 
-DLEN | <data>
+DLEN | &#60;data&#62;
 -----|-------
 09h  | see below
 
@@ -277,7 +277,7 @@ offset  | name         | description
 
 DID | CID | SEQ   | DLEN | data
 ----|-----|-------|------|-----
-00h | 21h | <any> | 2h   | flag
+00h | 21h | &#60;any&#62; | 2h   | flag
 
 #### Response
 
@@ -294,7 +294,7 @@ The complete power notification message is of the form:
 
 SOP1 | SOP2 | CODE | DLEN-MSB | DLEN-LSB | data  | CHK
 -----|------|------|----------|----------|-------|-----
-Fh   | FEh  | 01h  | 00h      | 02h      | state | <cmp>
+Fh   | FEh  | 01h  | 00h      | 02h      | state | &#60;cmp&#62;
 
 The power state byte mimics that of `CID` `20h` above:
 
@@ -311,7 +311,7 @@ The power state byte mimics that of `CID` `20h` above:
 
 DID | CID | SEQ   | DLEN | Wakeup       | Macro | orbBasic
 ----|-----|-------|------|--------------|-------|---------
-00h | 22h | <any> | 06h  | 16-bit val | val | 16-bit val
+00h | 22h | &#60;any&#62; | 06h  | 16-bit val | val | 16-bit val
 
 #### Response
 
@@ -336,7 +336,7 @@ orbBasic | If non-zero, Sphero will attempt to run an orbBasic program in Flash 
 
 DID | CID | SEQ   | DLEN | TIME
 ----|-----|-------|------|-------------
-00h | 25h | <any> | 03h  | 16-bit val
+00h | 25h | &#60;any&#62; | 03h  | 16-bit val
 
 #### Response
 
@@ -395,7 +395,7 @@ DID | CID
 
 SOP1 | SOP2 | CODE | DLEN-MSB | DLEN-LSB | data   | CHK
 -----|------|------|----------|----------|--------|-----
-FFh  | FEh  | 02h  | <msb>    | <lsb>    | <data> | <cmp>
+FFh  | FEh  | 02h  | &#60;msb&#62;    | &#60;lsb&#62;    | &#60;data&#62; | &#60;cmp&#62;
 
 This is a developer-level command to help diagnose aberrant behavior.
 Most system counters, process flags, and system states are decoded into human readable ASCII.
@@ -515,7 +515,7 @@ Here is the layout of the data record which is currently 58h bytes long:
 offset  | name               | description
 ------- | ------             | ------------
 00h     | RecVer             |￼Record version code – the following definition is for 01h
-02h     |￼<empty>            |￼Reserved
+02h     |￼&#60;empty&#62;            |￼Reserved
 03h     | Rx_Good            | Good packets received (unsigned 32-bit value)
 07h     | Rx_Bad_DID         | Packets with a bad Device ID (unsigned 32-bit value)
 0Bh     | Rx_Bad_DLEN        | Packets with a bad data length (unsigned 32-bit value)
@@ -526,7 +526,7 @@ offset  | name               | description
 1Fh     | Tx_Buff_Ovr        | Transmit buffer overruns (unsigned 32-bit value)
 23h     | LastBootReason     | Reason for last boot (8-bit value)
 24h     | BootCounters       | 16 different counts of boot reasons
-44h     | <empty>            | Reserved
+44h     | &#60;empty&#62;            | Reserved
 46h     | ChargeCount        | Charge cycles (unsigned 16-bit value)
 48h     | SecondsSinceCharge | Awake time in seconds since last charge (unsigned 16-bit value)
 4Ah     | SecondsOn          | Life awake time in seconds (unsigned 32-bit value)
@@ -546,7 +546,7 @@ These commands are specific to the features that Sphero offers.
 
 DID | CID | SEQ   | DLEN | HEADING
 ----|-----|-------|------|--------
-02h | 01h | <any> | 03h  | 16-bit val
+02h | 01h | &#60;any&#62; | 03h  | 16-bit val
 
 #### Response
 
@@ -567,7 +567,7 @@ In FW version 3.10 and later this also clears the maximum value counters for the
 
 DID | CID | SEQ   | DLEN | FLAG
 ----|-----|-------|------|--------
-02h | 02h | <any> | 02h  | <bool>
+02h | 02h | &#60;any&#62; | 02h  | &#60;bool&#62;
 
 #### Response
 
@@ -590,7 +590,7 @@ An error is returned if the sensor network is dead; without sensors the IMU won'
 
 DID | CID | SEQ   | DLEN | RATE
 ----|-----|-------|------|--------
-02h | 03h | <any> | 02h  | value
+02h | 03h | &#60;any&#62; | 02h  | value
 
 #### Response
 
@@ -615,7 +615,7 @@ A value of zero doesn't make much sense so it's interpreted as 1, the minimum.
 
 DID | CID | SEQ   | DLEN | DATA
 ----|-----|-------|------|--------
-02h | 04h | <any> | 21h  | 20h bytes
+02h | 04h | &#60;any&#62; | 21h  | 20h bytes
 
 #### Response
 
@@ -634,7 +634,7 @@ The Sphero firmware does not interpret it on the way in or out.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 05h | <any> | 01h
+02h | 05h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -652,7 +652,7 @@ This allows you to retrieve the application configuration block that is set asid
 
 DID | CID | SEQ   | DLEN |  Options | Angle Limit | Timeout | True Time
 ----|-----|-------|------|----------|-------------|---------|----------
-02h | 09h | <any> | 05h  | <byte>   |  <byte>     |  <byte> |  <byte>
+02h | 09h | &#60;any&#62; | 05h  | &#60;byte&#62;   |  &#60;byte&#62;     |  &#60;byte&#62; |  &#60;byte&#62;
 
 #### Response
 
@@ -666,7 +666,7 @@ DID | CID | SEQ   | DLEN |  Options | Angle Limit | Timeout | True Time
 
 SOP1 | SOP2 |  CODE |  DLEN-MSB |  DLEN_LSB |  data  | CHK
 -----|------|-------|-----------|-----------|--------|-----
-FFh  | FEh  | 0Bh   | 00h       | 02h       | result | <cmp>
+FFh  | FEh  | 0Bh   | 00h       | 02h       | result | &#60;cmp&#62;
 
 This command controls the self level routine.
 The self level routine attempts to achieve a horizontal orientation where pitch and roll angles are less than the provided Angle Limit.
@@ -752,7 +752,7 @@ Sleep requests made using this self level API call while the disable flag is ass
 
 DID | CID | SEQ   | DLEN       | N           | M           | MASK        |  PCNT     | MASK2
 ----|-----|-------|------------|-------------|-------------|-------------|-----------|------
-02h | 11h | <any> | 0ah or 0eh |  16-bit val |  16-bit val |  32-bit val | 8-bit val | 32-bit val
+02h | 11h | &#60;any&#62; | 0ah or 0eh |  16-bit val |  16-bit val |  32-bit val | 8-bit val | 32-bit val
 
 #### Response
 
@@ -847,7 +847,7 @@ bit  | sensor   | range units
 
 DID | CID | SEQ   | DLEN |  Meth |  Xt   | Xspd  | Yt    | Yspd  | Dead
 ----|-----|-------|------|-------|-------|-------|-------|-------|------
-02h | 12h | <any> | 07h  | val | val | val | val | val | val
+02h | 12h | &#60;any&#62; | 07h  | val | val | val | val | val | val
 
 #### Response
 
@@ -900,7 +900,7 @@ Note also that this feature relies on the accelerometer range being set to ±8Gs
 
 DID | CID | SEQ   | DLEN |  Flags | X             | Y             | Yaw Tare
 ----|-----|-------|------|--------|---------------|---------------|-------------------
-02h | 13h | <any> | 02h  | 8 bit  | 16 bit signed | 16 bit signed | 16 bit signed
+02h | 13h | &#60;any&#62; | 02h  | 8 bit  | 16 bit signed | 16 bit signed | 16 bit signed
 
 #### Response
 
@@ -934,7 +934,7 @@ Yaw Tare   | Controls how the X,Y-plane is aligned with Sphero’s heading coord
 
 DID | CID | SEQ   | DLEN |  Range Idx
 ----|-----|-------|------|------------
-02h | 14h | <any> | 02h  | 8 bit val
+02h | 14h | &#60;any&#62; | 02h  | 8 bit val
 
 #### Response
 
@@ -964,7 +964,7 @@ You shouldn't expect either to work.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 15h | <any> | 01h
+02h | 15h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -985,7 +985,7 @@ The position is a signed value in centimeters, the component velocities are sign
 
 DID | CID | SEQ   | DLEN |  RED    | GREEN   | BLUE    | FLAG
 ----|-----|-------|------|---------|---------|---------|-------
-02h | 20h | <any> | 05h  | value | value | value | <bool>
+02h | 20h | &#60;any&#62; | 05h  | value | value | value | &#60;bool&#62;
 
 #### Response
 
@@ -1005,7 +1005,7 @@ If `FLAG` is true, the value is also saved as the "user LED color" which persist
 
 DID | CID | SEQ   | DLEN |  BRIGHT
 ----|-----|-------|------|--------
-02h | 21h | <any> | 02h  | value
+02h | 21h | &#60;any&#62; | 02h  | value
 
 #### Response
 
@@ -1024,7 +1024,7 @@ The value does not persist across power cycles.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 22h | <any> | 01h
+02h | 22h | &#60;any&#60; | 01h
 
 #### Response
 
@@ -1045,7 +1045,7 @@ This may or may not be actively driven to the RGB LED.
 
 DID | CID | SEQ   | DLEN |  Speed | Heading | Heading | STATE
 ----|-----|-------|------|--------|---------|---------|------
-02h | 30h | <any> | 05h  | val  | <msb>   | <lsb>   | val
+02h | 30h | &#60;any&#62; | 05h  | val  | &#60;msb&#62;   | &#60;lsb&#62;   | val
 
 #### Response
 
@@ -1070,7 +1070,7 @@ The valid range is 0..359.
 
 DID  | CID   | SEQ     | DLEN   | L-MODE       | L-POWER    | R-MODE   | R-POWER
 ---- | ----- | ------- | ------ | ------------ | ---------- | -------- | --------
-02h  | 33h   | <any>   | 05h    | val          | val        | val      | val
+02h  | 33h   | &#60;any&#62;   | 05h    | val          | val        | val      | val
 
 #### Response
 
@@ -1098,7 +1098,7 @@ MODE | Description
 
 DID | CID | SEQ   | DLEN | TIME
 ----|-----|-------|------|--------
-02h | 34h | <any> | 03h  | 16-bit val
+02h | 34h | &#60;any&#62; | 03h  | 16-bit val
 
 #### Response
 
@@ -1122,7 +1122,7 @@ Note that you must enable this action by setting System Option Flag #4.
 
 DID | CID | SEQ   | DLEN |  FLAGS
 ----|-----|-------|------|--------
-02h | 35h | <any> | 05h  | 32-bit val
+02h | 35h | &#60;any&#62; | 05h  | 32-bit val
 
 #### Response
 
@@ -1141,7 +1141,7 @@ See below for the bit definitions.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 36h | <any> | 01h
+02h | 36h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -1172,7 +1172,7 @@ bit # | Description
 
 DID | CID | SEQ   | DLEN |  FLAGS
 ----|-----|-------|------|--------
-02h | 37h | <any> | 05h  | 32-bit val
+02h | 37h | &#60;any&#62; | 05h  | 32-bit val
 
 #### Response
 
@@ -1192,7 +1192,7 @@ See below for the bit definitions.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 38h | <any> | 01h
+02h | 38h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -1217,7 +1217,7 @@ bit # | Description
 
 DID | CID | SEQ   | DLEN |  ID
 ----|-----|-------|------|-----
-02h | 50h | <any> | 02h  | 8-bit value
+02h | 50h | &#60;any&#62; | 02h  | 8-bit value
 
 #### Response
 
@@ -1246,7 +1246,7 @@ In the case of the former, send an abort command first.
 
 DID | CID | SEQ   | DLEN      | MACRO
 ----|-----|-------|-----------|--------
-02h | 51h | <any> | <len + 1> | <data>
+02h | 51h | &#60;any&#62; | &#60;len + 1&#62; | &#60;data&#62;
 
 #### Response
 
@@ -1269,7 +1269,7 @@ You must follow this with a Run Macro command to begin execution.
 
 DID | CID | SEQ   | DLEN      |  MACRO
 ----|-----|-------|-----------|--------
-02h | 52h | <any> | <len + 1> | <data>
+02h | 52h | &#60;any&#62; | &#60;len + 1&#62; | &#60;data&#62;
 
 #### Response
 
@@ -1296,7 +1296,7 @@ Refer to the Sphero Macro documentation for more detail.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 54h | <any> | 01h
+02h | 54h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -1315,7 +1315,7 @@ The table of any persistent user macros is cleared.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 55h | <any> | 01h
+02h | 55h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -1323,7 +1323,7 @@ DID | CID | SEQ   | DLEN
 
 DLEN |  ID   |  Cmd Num | Cmd Num
 -----|-------|----------|--------
-04h  | <any> | <msb>    | <lsb>
+04h  | &#60;any&#62; | &#60;msb&#62;    | &#60;lsb&#62;
 
 This command aborts any executing macro and returns both its ID code and the command number currently in process.
 An exception is a System Macro that is executing with the `UNKILLABLE` flag set.
@@ -1338,7 +1338,7 @@ A return ID code of `00h` indicates that no macro was running and an ID code wit
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 56h | <any> | 01h
+02h | 56h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -1346,7 +1346,7 @@ DID | CID | SEQ   | DLEN
 
 DLEN |  ID   | Cmd Num | Cmd Num
 -----|-------|---------|--------
-04h  | <any> | <msb>   | <lsb>
+04h  | &#60;any&#62; | &#60;msb&#62;   | &#60;lsb&#62;
 
 This command returns the ID code and command number of the currently executing macro.
 If no macro is currently running, `00h` is returned for the ID code while the command number is left over from the last macro.
@@ -1359,7 +1359,7 @@ If no macro is currently running, `00h` is returned for the ID code while the co
 
 DID | CID | SEQ   | DLEN |  Param | Val1  | Val2
 ----|-----|-------|------|--------|-------|------
-02h | 57h | <any> | 04h  | <idx>  | <any> | <any>
+02h | 57h | &#60;any&#62; | 04h  | &#60;idx&#62;  | &#60;any&#62; | &#60;any&#62;
 
 #### Response
 
@@ -1388,7 +1388,7 @@ Details of what these system variables change are presented in the Sphero Macro 
 
 DID | CID | SEQ   | DLEN      | MACRO Chunk
 ----|-----|-------|-----------|--------
-02h | 58h | <any> | <len + 1> | <data>
+02h | 58h | &#60;any&#62; | &#60;len + 1&#62; | &#60;data&#62;
 
 #### Response
 
@@ -1413,7 +1413,7 @@ You must follow this with a Run Macro command (ID `FFh`) to actually get it to g
 
 DID | CID | SEQ   | DLEN | Area
 ----|-----|-------|------|--------
-02h | 60h | <any> | 02h  | val
+02h | 60h | &#60;any&#62; | 02h  | val
 
 #### Response
 
@@ -1432,7 +1432,7 @@ Specify `00h` for the temporary RAM buffer or `01h` for the persistent storage a
 
 DID | CID | SEQ   | DLEN  |  Area | Program Code
 ----|-----|-------|-------|-------|-------------
-02h | 61h | <any> | val | val | <any>
+02h | 61h | &#60;any&#62; | val | val | &#60;any&#62;
 
 #### Response
 
@@ -1455,7 +1455,7 @@ Possible error responses would be `ORBOTIXRSPCODEEPARAM` if an illegal storage a
 
 DID | CID | SEQ   | DLEN |  Area | Start Line | Start Line
 ----|-----|-------|------|-------|------------|------------
-02h | 62h | <any> | 04h  | val | <msb>      | <lsb>
+02h | 62h | &#60;any&#62; | 04h  | val | &#60;msb&#62;      | &#60;lsb&#62;
 
 #### Response
 
@@ -1474,7 +1474,7 @@ This command will fail if there is already an orbBasic program executing.
 
 DID | CID | SEQ   | DLEN
 ----|-----|-------|-----
-02h | 63h | <any> | 01h
+02h | 63h | &#60;any&#62; | 01h
 
 #### Response
 
@@ -1492,7 +1492,7 @@ Aborts execution of any currently running orbBasic program.
 
 DID | CID | SEQ   | DLEN |  VAL
 ----|-----|-------|------|--------
-02h | 64h | <any> | 05h  | (32-bit signed val)
+02h | 64h | &#60;any&#62; | 05h  | (32-bit signed val)
 
 #### Response
 
@@ -1510,7 +1510,7 @@ Refer to the orbBasic language document for further information.
 
 Cmd | Flag   |  PCD
 ----|--------|-------
-03h | <bool> |  <any>
+03h | &#60;bool&#62; |  &#60;any&#62;
 
 This turns on and off the control system which actively stabilizes Sphero.
 If you intend to drive around, you should make sure the system that allows you to do it is enabled.
@@ -1521,7 +1521,7 @@ Flag is `00h` for OFF, `01h` for ON with control system reset and `02h` for ON w
 
 Cmd | Heading | Heading | PCD
 ----|---------|---------|-----
-04h | <msb>   | <lsb>   | <any>
+04h | &#60;msb&#62;   | &#60;lsb&#62;   | &#60;any&#62;
 
 This reassigns Sphero's current heading to the supplied value.
 The units are degrees so the valid range is 0 to 359.
@@ -1532,7 +1532,7 @@ For example if you assign the current heading to zero and issue a roll command a
 
 Cmd | Rate
 ----|-----
-13h | <any>
+13h | &#60;any&#62;
 
 Sphero's control system implements an intermediate rate limiter for the yaw axis, feeding smoothed transitions to that servo loop.
 This sets the maximum increment.
@@ -1543,7 +1543,7 @@ This only applies to Roll commands; if you use the macro command Rotate Over Tim
 
 Cmd | Time  | Time
 ----|-------|-------
-0Bh | <msb> | <lsb>
+0Bh | &#60;msb&#62; | &#60;lsb&#62;
 
 This causes an immediate delay in the execution of additional macro commands while allowing the background ones to keep running.
 
@@ -1551,11 +1551,11 @@ This causes an immediate delay in the execution of additional macro commands whi
 
 Cmd | System Delay 1 |  System Delay 1
 ----|----------------|---------------
-01h | <msb>          | <lsb>
+01h | &#60;msb&#62;          | &#60;lsb&#62;
 
 Cmd | System Delay 2 | System Delay 2
 ----|----------------|---------------
-02h | <msb>          | <lsb>
+02h | &#60;msb&#62;          | &#60;lsb&#62;
 
 Two system delay settings are provided.
 Certain commands inherit these values in place of the PCD byte.
@@ -1564,11 +1564,11 @@ Certain commands inherit these values in place of the PCD byte.
 
 Cmd | System Speed 1 |  System Speed 1
 ----|----------------|---------------
-0fh | <msb>          | <lsb>
+0fh | &#60;msb&#62;          | &#60;lsb&#62;
 
 Cmd | System Speed 2 | System Speed 2
 ----|----------------|---------------
-10h | <msb>          | <lsb>
+10h | &#60;msb&#62;          | &#60;lsb&#62;
 
 Two system speed settings are provided.
 Certain roll commands use these values in place of explicit speed values.
@@ -1577,7 +1577,7 @@ Certain roll commands use these values in place of explicit speed values.
 
 Cmd | Speed | Heading | Heading | PCD
 ----|-------|---------|---------|------
-05h | <any> | <msb>   | <lsb>   | <any>
+05h | &#60;any&#62; | &#60;msb&#62;   | &#60;lsb&#62;   | &#60;any&#62;
 
 This command gets Sphero to start rolling along the commanded speed and heading.
 If the stabilization system is off, this command will do nothing.
@@ -1587,7 +1587,7 @@ A speed of `00h` also engages ramped down braking of roll speed.
 
 Cmd | Speed | Heading | Heading | Delay | Delay
 ----|-------|---------|---------|-------|------
-1Dh | <any> | <msb>   | <lsb>   | <msb> | <lsb>
+1Dh | &#60;any&#62; | &#60;msb&#62;   | &#60;lsb&#62;   | &#60;msb&#62; | &#60;lsb&#62;
 
 This is just like the Roll command above but it accepts a 2-byte delay value.
 
@@ -1595,7 +1595,7 @@ This is just like the Roll command above but it accepts a 2-byte delay value.
 
 Cmd | Speed | PCD
 ----|-------|----
-25h | <any> | <any>
+25h | &#60;any&#62; | &#60;any&#62;
 
 This is like the Roll command but it does not effect the heading.
 It is especially useful when you don't know the current heading but want to stop without experiencing a turning glitch (Speed = 0).
@@ -1604,7 +1604,7 @@ It is especially useful when you don't know the current heading but want to stop
 
 Cmd | Heading | Heading | Speed
 ----|---------|---------|------
-06h | <msb>   | <lsb>   | <any>
+06h | &#60;msb&#62;   | &#60;lsb&#62;   | &#60;any&#62;
 
 This is just like the roll command 05h but the PCD is omitted and instead derived from the SD1 value.
 
@@ -1612,11 +1612,11 @@ This is just like the roll command 05h but the PCD is omitted and instead derive
 
 Cmd | Heading | Heading
 ----|---------|-------
-11h | <msb>   | <lsb>
+11h | &#60;msb&#62;   | &#62;lsb&#62;
 
 Cmd | Heading | Heading
 ----|---------|-------
-12h | <msb>   | <lsb>
+12h | &#60;msb&#62;   | &#62;lsb&#62;
 
 This is the ultimate in roll commands: the speed comes from one of the system speed values and the post command delay from SD1.
 All you need to provide is a heading.
@@ -1626,7 +1626,7 @@ Use command code `11h` to select SPD1 and `12h` for SPD2.
 
 Cmd | Left Mode   | Left Power | Right Mode  | Right Power | PCD
 ----|-------------|------------|-------------|-------------|-----
-0Ah | <see table> | <any>      | <see table> | <any>       | <any>
+0Ah | &#60;see table&#62; | &#60;any&#62;      | &#60;see table&#62; | &#60;any&#62;       | &#60;any&#62;
 
 This allows you to take over one or both of the motor output values, instead of having the stabilization system control them.
 Each motor (left and right requires a mode (see below) and a power value from `0` - `FFh`.
@@ -1644,7 +1644,7 @@ Mode  |  Description
 
 Cmd | Angle | Angle | Time  |  Time
 ----|-------|-------|-------|--------
-1Ah | <msb> | <lsb> | <msb> | <lsb>
+1Ah | &#60;msb&#62; | &#60;lsb&#62; | &#60;msb&#62; | &#60;lsb&#62;
 
 This command drives the yaw control system directly to effect an angular change over time.
 The angle parameter is a signed number of degrees and time is of course in milliseconds.
@@ -1659,7 +1659,7 @@ In the above examples you need to be doing something for 4 and 5 seconds to give
 
 Cmd | Angle | Angle
 ----|-------|-------
-21h | <msb> | <lsb>
+21h | &#60;msb&#62; | &#60;lsb&#62;
 
 This is the same as Rotate Over Time but instead of requiring an immediate value, command code `21h` inherits this value from System Delay 1.
 Likewise use code `22h` to inherit from SD2.
@@ -1668,7 +1668,7 @@ Likewise use code `22h` to inherit from SD2.
 
 Cmd | Time  |  Time
 ----|-------|-------
-19h | <msb> | <lsb>
+19h | &#60;msb&#62; | &#60;lsb&#62;
 
 This clever command will pause execution of macros until Sphero is determined "stopped" by the stabilization system or until the provided timeout expires.
 You can use this, for example, at corners where you want roll commands to make sharp turns.
@@ -1677,7 +1677,7 @@ You can use this, for example, at corners where you want roll commands to make s
 
 Cmd  | Count
 -----|------
-1Eh  | <any>
+1Eh  | &#60;any&#62;
 
 Begins a looping block, repeating the commands between this one and Loop End the specified number of times.
 A count of 0 is treated as 1, neither of which do anything additional.
@@ -1705,7 +1705,7 @@ If no actual loop is in process, or if the ID of the current macro doesn't match
 
 Cmd | Length |  Length |  Data
 ----|--------|---------|------
-20h | <msb>  | <lsb>   | <...>
+20h | &#60;msb&#62;  | &#60;lsb&#62;   | <...>
 
 This is out of band data and no processing is performed upon it.
 The macro is aborted if the Length points to a place outside of the current macro or outside of the valid data area on the Temp or Stream macro buffer.
@@ -1714,7 +1714,7 @@ The macro is aborted if the Length points to a place outside of the current macr
 
 Cmd | Red   | Green | Blue  |  PCD
 ----|-------|-------|-------|--------
-07h | <any> | <any> | <any> | <any>
+07h | &#60;any&#62; | &#60;any&#62; | &#60;any&#62; | &#60;any&#62;
 
 This command drives the RGB LED to the desired values.
 When macros are running RGB LED commands take precedence over all others in the system (except for battery warnings).
@@ -1723,7 +1723,7 @@ When macros are running RGB LED commands take precedence over all others in the 
 
 Cmd | Red   | Green | Blue
 ----|-------|-------|------
-08h | <any> | <any> | <any>
+08h | &#60;any&#62; | &#60;any&#62; | &#60;any&#62;
 
 Just like the command above but the delay is inherited from SD2.
 
@@ -1731,7 +1731,7 @@ Just like the command above but the delay is inherited from SD2.
 
 Cmd | Red   | Green | Blue  |  Time |  Time
 ----|-------|-------|-------|-------|------
-14h | <any> | <any> | <any> | <msb> | <lsb>
+14h | &#60;any&#62; | &#60;any&#62; | &#60;any&#62; | &#60;msb&#62; | &#60;lsb&#62;
 
 This powerful command fades the RGB LED from its current value to the provided one over the time provided.
 The current LED value is from the last LED macro command.
@@ -1743,7 +1743,7 @@ NOTE: This command runs in the background so you will need to provide a suitable
 
 Cmd | Value | PCD
 ----|-------|-------
-09h | <any> | <any>
+09h | &#60;any&#62; | &#60;any&#62;
 
 This controls the intensity of the blue "aiming" LED.
 That's it.
@@ -1752,7 +1752,7 @@ That's it.
 
 Cmd | Target ID
 ----|-----------
-0Ch | <any *>
+0Ch | &#60;any *&#62;
 
 You can chain macros with this and the Gosub command.
 The sole parameter is the Macro ID of where you want to go to.
@@ -1766,7 +1766,7 @@ The macro flags of the target macro replace those currently in use.
 
 Cmd | Target ID
 ----|----------
-0Dh | <any *>
+0Dh | &#60;any *&#62;
 
 You can factor out common command sets and then call them using Gosub.
 An illegal target aborts the macro and it is ignored in stream macro mode.
@@ -1779,7 +1779,7 @@ There is no explicit return needed, just a macro end command.
 
 Cmd | Target ID
 ----|----------
-23h | <any *>
+23h | &#60;any *&#62;
 
 This command ties the macro system to collision detection system as of FW ver 1.10 and Macro Ver 4.
 When enabled, the collision detection system sets a flag which the macro executive acknowledges and then executes a Goto command to the specified Macro ID.
@@ -1793,7 +1793,7 @@ You must program and arm the collision detector separately (through an API macro
 
 Cmd | Method |  Xthreshold |  Xspeed |  Ythreshold |  Yspeed |  DeadTime
 ----|--------|-------------|---------|-------------|---------|----------
-27h | 0..1   |  <any>      | <any>   | <any>       | <any>   | <any>
+27h | 0..1   |  &#60;any&#62;      | &#60;any&#62;   | &#60;any&#62;       | &#60;any&#62;   | &#60;any&#62;
 
 This configures the collision detection subsystem that ties in with the Branch On Collision command.
 Rather than reproduce the details here, please refer to the collision detection document.
@@ -1804,7 +1804,7 @@ Note that there is no PCD for this command.
 
 Cmd | Time  |  Time
 ----|-------|-------
-0Eh | <msb> | <lsb>
+0Eh | &#60;msb&#62; | &#60;lsb&#62;
 
 This puts Sphero to sleep, able to be awaken from a double-shake.
 The time parameter is optional and is the number of milliseconds for him to automatically reawaken.
@@ -1837,7 +1837,7 @@ Most of the same rules as above apply, but if you use this command out of a stre
 
 Cmd  | Marker
 -----|---------
-15h  | <val>
+15h  | &#60;val&#62;
 
 This emits an asynchronous message to the client with the supplied marker value.
 Marker value zero is reserved for the end of macro option, so don t emit it unless you want to confuse yourself.
@@ -1845,7 +1845,7 @@ The format of the async message payload is below:
 
 Marker |  Macro ID |  Command # | Command #
 -------|-----------|------------|----------
-<val>  | <lsb>     | <msb>      | <lsb>
+&#60;val&#62;  | &#60;lsb&#62;     | &#60;msb&#62;      | &#60;lsb&#62;
 
 Async ID code `06h` is reserved for macro notifications, the Marker field comes from the command and the last two bytes are the command number of this marker within the current macro.
 You can read more about async messages in the Sphero API document.
@@ -2445,7 +2445,7 @@ This is like the RGB command but sets the LED to one of eight predefined colors,
 
 Value  | Color
 ------ | ------
-0      | <off>
+0      | &#60;off&#62;
 1      | red
 2      | green
 3      | blue
@@ -2453,7 +2453,7 @@ Value  | Color
 5      | purple
 6      | white
 7      | yellow
-8      | <off>
+8      | &#60;off&#62;
 
 Example:
 
